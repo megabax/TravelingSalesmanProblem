@@ -144,9 +144,9 @@ namespace TravelingSalesmanProblem
             edges.Clear();
             List<Point> lpoints = new List<Point>(items);
             List<Point> path = new List<Point>();
-            while(lpoints.Count>1)
-            {                
-                Point point = lpoints[Constants.rnd.Next(lpoints.Count - 1)];
+            Point point = lpoints[Constants.rnd.Next(lpoints.Count - 1)];
+            while (lpoints.Count>1) 
+            {                                
                 path.Add(point);
                 lpoints.Remove(point);
                 double min = double.MaxValue;
@@ -162,8 +162,9 @@ namespace TravelingSalesmanProblem
                     }
                 }
                 lpoints.Remove(point2);
-                path.Add(point2);
+                point = point2;
             }
+            path.Add(point);
             path.Add(lpoints[0]);
             edges = GetEdges(path);
         }
