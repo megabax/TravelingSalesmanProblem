@@ -48,18 +48,24 @@ namespace TravelingSalesmanProblem
             Results = new List<List<Point>>();
         }
 
-
+        /// <summary>
+        /// Алгоритм полного перебора
+        /// </summary>
+        /// <param name="t">Номер элемента в массиве</param>
+        /// <param name="n">Кол-во элементов</param>
         public void BrutForce(int t, int n)
         {
             if (t == n - 1)
-            { //Вывод очередной перестановки
+            { 
+                //Вывод очередной перестановки
                 for (int i = 0; i < n; ++i) Cout(items[i]);
                 CoutEndl();
             }
             else
             {
                 for (int j = t; j < n; ++j)
-                { //Запускаем процесс обмена
+                { 
+                    //Запускаем процесс обмена
                     Swap(t, j); //a[t] со всеми последующими
                     t++;
                     BrutForce(t, n); //Рекурсивный вызов

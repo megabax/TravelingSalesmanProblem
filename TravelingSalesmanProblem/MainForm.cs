@@ -126,19 +126,6 @@ namespace TravelingSalesmanProblem
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            a = new int[5];
-            for(int i=0; i<a.Length; i++) a[i]=i+1;
-            Generate(0, a.Length);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            points.edges = Points.GetEdges(points.Results[index]);
-            pbImage.Refresh();
-            index++;
-        }
 
         private void btnGreedyAlgorithm(object sender, EventArgs e)
         {
